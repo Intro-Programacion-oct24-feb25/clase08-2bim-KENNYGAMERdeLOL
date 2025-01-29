@@ -2,12 +2,13 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package ejemplo002;
+package ejemplo001;
+
 /**
  *
  * @author reroes
  */
-public class Principal1 {
+public class Principal11 {
 
     public static void main(String[] args) {
         
@@ -20,15 +21,9 @@ public class Principal1 {
         String nombre;
         String apellido;
         String tipoNotas;
-        String Username;
         double promedioEstudiante;
         int numeroNotasArribaPromedio;
         int [] filaNotas;
-        int notasAltas;
-        int notaBajas;
-   
-        
-        String mensajeFinal = "";
         for (int i = 0; i < nombres.length; i++) {
             nombre = nombres[i];
             apellido = apellidos[i];
@@ -37,25 +32,21 @@ public class Principal1 {
             numeroNotasArribaPromedio = funcion02(filaNotas, 
                     promedio_paralelo);
             tipoNotas = funcion03(filaNotas);
-            mensajeFinal = String.format("%s%s\n", mensajeFinal, 
-                    presentarReporte(nombre, apellido, tipoNotas,   //mensaje finakl esoera reibir dos valores son mensaje final y la funcion presentarReporte
-                    promedioEstudiante, numeroNotasArribaPromedio));
+            presentarReporte(nombre, apellido, tipoNotas, 
+                    promedioEstudiante, numeroNotasArribaPromedio);
         }
-        CrearArchivoTexto.agregarRegistros(mensajeFinal); // esta es la forma para crear un archivo el cual guardara toda la informacion que le vamos a enviar. 
-
     }
     
-    public static String presentarReporte(String nom, String ap, String notas, 
+    public static void presentarReporte(String nom, String ap, String notas, 
             double prom, int numeroNotas){
         String reporte = String.format("Nombres: %s\n"
                 + "Apellidos: %s\n"
                 + "Con notas: \n"
                 + "%s\n"
                 + "Promedio - %2f\n"
-                + "Número de notas arriba del promedio: %d\n\n",
+                + "Número de notas arriba del promedio: %d\n",
                 nom, ap, notas, prom, numeroNotas);
-        
-        return reporte;
+        System.out.printf("%s\n\n", reporte);
     }
 
     
@@ -120,31 +111,9 @@ public class Principal1 {
         }
         
         return cadena;
-      
     }
-    public static String funcion(String nom, String ap){
- String user; 
- nom = nom.toLowerCase();
- ap = ap.toLowerCase();
- user = String.format("%s.%S@Utpl.edu.ec",nom.substring(0, 1), ap.substring(0,1));
- return user; 
- 
-
+    
+    
+    
+    
 }
-        public static int funcion04(int [] notas, double promedio){
-        
-        int contador = 0;
-        int notas = 0;
-        for (int i = 0; i < notas.length;  i++) {
-            contador = contador + 1
-                       if (notasAltas > promedio) {
-            }
-        }
-   public static int funcion0(int [] notas, double promedio){
-        
-        int contador = 0;
-        int notasAltas;
-        for (int i = 0; i < notas.length; i++) {
-            notasAltas = notas[i];
-            if (notasAltas > promedio) {
-                contador = contador + 1;
